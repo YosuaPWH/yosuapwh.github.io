@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --primary: #0d6efd;
+  --accent: #6610f2;
+  --bg: #ffffff;
+  --text: #212529;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    scroll-behavior: smooth;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: var(--bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+nav ul {
+  display: flex;
+  gap: 1rem;
+}
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+main section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.content-wrapper {
+  max-width: 800px;
+  opacity: 0;
+  transition: opacity 0.6s ease-out;
+}
+.content-wrapper.visible {
+  opacity: 1;
+}
+
+.parallax {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 4px;
+  transition: box-shadow 0.2s;
+}
+.btn:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.card {
+  background: var(--bg);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+}
+.tags li {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+  }
+  nav ul.open {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+@media (max-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+.timeline {
+  margin: 2rem 0;
+  border-left: 2px solid var(--primary);
+  padding-left: 1rem;
+}
+.timeline li {
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .timeline {
+    display: flex;
+    flex-direction: column;
+  }
+}

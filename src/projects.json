@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Project 1",
+    "tags": ["HTML", "CSS"],
+    "blurb": "Description for project 1.",
+    "demo": "#",
+    "source": "#",
+    "screenshot": "/assets/project1.png"
+  },
+  {
+    "title": "Project 2",
+    "tags": ["JS", "API"],
+    "blurb": "Description for project 2.",
+    "demo": "#",
+    "source": "#",
+    "screenshot": "/assets/project2.png"
+  }
+]

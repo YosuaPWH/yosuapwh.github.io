@@ -1,40 +1,137 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yosua Haloho Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <nav>
-        <ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Personal portfolio" />
+    <meta property="og:title" content="Portfolio" />
+    <meta property="og:image" content="/assets/og-image.png" />
+    <link rel="canonical" href="https://example.com/" />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="#" class="logo">Logo</a>
+        <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+        <nav>
+          <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#resume">Resume</a></li>
-        </ul>
-    </nav>
-    <header id="hero">
-        <h1>Yosua Putra Wisea Haloho</h1>
-        <div id="animation-container"></div>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    <section id="about">
-        <h2>About</h2>
-        <p>Halo! My name is Yosua Putra Wisea Haloho. This website presents my profile, projects, and resume.</p>
-    </section>
-    <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-            <li>Project 1 &ndash; Description of your first project.</li>
-            <li>Project 2 &ndash; Description of your second project.</li>
-        </ul>
-    </section>
-    <section id="resume">
-        <h2>Resume</h2>
-        <p>Here you can place a summary of your experience or a link to your resume.</p>
-    </section>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="script.js"></script>
-</body>
+    <main>
+      <section id="about">
+        <div
+          class="parallax"
+          data-rellax-speed="-3"
+          style="
+            background-image: url('https://source.unsplash.com/random/1200x800?tech');
+          "
+        ></div>
+        <div class="content-wrapper">
+          <div style="display: flex; gap: 1rem; align-items: center">
+            <img
+              src="/assets/profile.jpg"
+              alt="Profile photo"
+              width="200"
+              height="200"
+            />
+            <div>
+              <h2 class="section-title">About Me</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                facilisi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="projects">
+        <div
+          class="parallax"
+          data-rellax-speed="-3"
+          style="
+            background-image: url('https://source.unsplash.com/random/1200x800?code');
+          "
+        ></div>
+        <div class="content-wrapper">
+          <h2 class="section-title">Projects</h2>
+          <div class="cards"></div>
+        </div>
+      </section>
+      <section id="resume">
+        <div
+          class="parallax"
+          data-rellax-speed="-3"
+          style="
+            background-image: url('https://source.unsplash.com/random/1200x800?abstract');
+          "
+        ></div>
+        <div class="content-wrapper">
+          <h2 class="section-title">Resume</h2>
+          <a href="/resume.pdf" class="btn" download>Download Résumé</a>
+          <ul class="timeline">
+            <li>
+              <strong>2024</strong> - Web Developer - Company A -
+              <ul>
+                <li>Did things</li>
+              </ul>
+            </li>
+            <li>
+              <strong>2023</strong> - Designer - Company B -
+              <ul>
+                <li>Did design</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="contact">
+        <div
+          class="parallax"
+          data-rellax-speed="-3"
+          style="
+            background-image: url('https://source.unsplash.com/random/1200x800?paper');
+          "
+        ></div>
+        <div class="content-wrapper">
+          <h2 class="section-title">Contact</h2>
+          <form
+            id="contact-form"
+            action="https://formspree.io/f/{yourID}"
+            method="POST"
+          >
+            <label>
+              Name
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Email
+              <input
+                type="email"
+                name="email"
+                required
+                pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}"
+              />
+            </label>
+            <label>
+              Message
+              <textarea name="message" required></textarea>
+            </label>
+            <button type="submit" class="btn">Submit</button>
+          </form>
+          <div id="form-status" role="alert" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024</p>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
